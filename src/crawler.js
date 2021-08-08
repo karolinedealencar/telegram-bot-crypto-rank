@@ -1,12 +1,12 @@
+/* eslint-disable no-console */
 const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+
 puppeteer.use(StealthPlugin())
 
 const launchBrowser = async () => {
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath: 'google-chrome-stable',
-    args: ['--no-sandbox'],
   })
   const page = await browser.newPage()
   return { browser, page }
@@ -41,7 +41,7 @@ const getCryptoList = async (page) => {
         price,
         volume,
         change,
-        marketCap
+        marketCap,
       }
     })
 
@@ -55,5 +55,5 @@ const getCryptoList = async (page) => {
 module.exports = {
   launchBrowser,
   closeBrowser,
-  getCryptoList
+  getCryptoList,
 }
