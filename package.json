@@ -1,10 +1,10 @@
 {
   "name": "telegram-bot-crypto-rank",
   "version": "1.0.0",
-  "description": "Telegram bot that sends data from top 10 cryptos from coinbase.com.",
+  "description": "Bot that sends data from top 10 cryptos from coinbase.com to a telegram group",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
