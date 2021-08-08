@@ -1,7 +1,7 @@
 {
   "name": "telegram-bot-crypto-rank",
   "version": "1.0.0",
-  "description": "Telegram bot that sends data from the first 30 ranking crypts from coinbase.com.",
+  "description": "Telegram bot that sends data from top 10 cryptos from coinbase.com.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/karolinedealencar/telegram-bot-crypto-rank#readme",
   "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
     "puppeteer": "^10.2.0",
     "puppeteer-extra": "^3.1.18",
     "puppeteer-extra-plugin-stealth": "^2.7.8"
