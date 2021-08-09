@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const { closeBrowser, getCryptoList, launchBrowser } = require('./crawler')
-const { sendMessageToTelegramBot } = require('./bot')
+const { closeBrowser, getCryptoList, launchBrowser } = require('./services/crawler')
+const { sendMessageToTelegramBot } = require('./services/bot')
 
 const start = async () => {
   console.log('[ 🤖 ] service started')

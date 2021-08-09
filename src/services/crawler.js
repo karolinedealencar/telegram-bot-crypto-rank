@@ -24,8 +24,7 @@ const getCryptoList = async (page) => {
   console.log('[ 🤖 ] starting crypto info scraping')
   const cryptos = await page.evaluate(() => {
     const list = Array.from(document.querySelectorAll('#main table tbody tr'))
-
-    const data = list.map((item) => {
+    return list.map((item) => {
       const icon = item.querySelector('td:nth-child(1) img').src
       const name = item.querySelector('td:nth-child(1) span:nth-child(1)').textContent
       const symbol = item.querySelector('td:nth-child(1) span:nth-child(2)').textContent
@@ -44,8 +43,6 @@ const getCryptoList = async (page) => {
         marketCap,
       }
     })
-
-    return data
   })
 
   console.log('[ 🤖 ] finished crypto info scraping')

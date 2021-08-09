@@ -1,5 +1,5 @@
 const axios = require('axios').default
-const { telegramBotToken, telegramBotChatID } = require('./config')
+const { telegramBotToken, telegramBotChatID } = require('../config')
 
 const formatMessageToTelegramBot = (data) => `
   <b>Top 10 Cryptos</b>
