@@ -1,7 +1,7 @@
 const axios = require('axios').default
 const { telegramBotToken, telegramBotChatID } = require('../config')
 
-const formatMessageToTelegramBot = (data) => `
+const formatMessageToTelegramBot = (data = []) => `
   <b>Top 10 Cryptos</b>
   ${data.map((item) => `
     <b>${item.name} (${item.symbol})</b>
@@ -24,4 +24,7 @@ const sendMessageToTelegramBot = async (data) => {
 
 module.exports = {
   sendMessageToTelegramBot,
+  formatMessageToTelegramBot,
+  sendAnimationToTelegramBotAPI,
+  sendMessageToTelegramBotAPI
 }
