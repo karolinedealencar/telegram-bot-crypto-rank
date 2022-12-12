@@ -1,11 +1,13 @@
-/* eslint-disable no-console */
+const { executablePath } = require('puppeteer')
 const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 
 puppeteer.use(StealthPlugin())
 
 const launchBrowser = async () => {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    executablePath: executablePath(),
+  })
   const page = await browser.newPage()
   return { browser, page }
 }

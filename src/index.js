@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const { closeBrowser, getCryptoList, launchBrowser } = require('./services/crawler')
 const { sendMessageToTelegramBot } = require('./services/bot')
 
