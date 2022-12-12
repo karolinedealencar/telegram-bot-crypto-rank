@@ -13,7 +13,7 @@ Bot that sends data from top 10 cryptos from [coinbase.com](https://www.coinbase
 1. `git clone https://github.com/karolinedealencar/telegram-bot-crypto-rank`
 2. `cd telegram-bot-crypto-rank`
 3. `npm install`
-4. `cp env.sample .env`
+4. `cp .env.sample .env`
 5. `add your telegram bot token & the chat id you want to send the data`
     - [tutorial on how to create a bot & get the token](https://core.telegram.org/bots#3-how-do-i-create-a-bot)
     - [tutorial on how to get the chat id](https://stackoverflow.com/a/38388851)
