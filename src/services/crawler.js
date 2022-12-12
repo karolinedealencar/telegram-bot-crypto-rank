@@ -21,17 +21,18 @@ const getCryptoList = async (page) => {
   console.log('[ 🤖 ] waiting for page content')
   await page.waitForSelector('#main table tbody tr img')
 
-  console.log('[ 🤖 ] starting crypto info scraping')
   const cryptos = await page.evaluate(() => {
-    const list = Array.from(document.querySelectorAll('#main table tbody tr'))
+    const list = Array.from(document.querySelectorAll('#main table tbody tr')).slice(0, 10)
+
     return list.map((item) => {
       const icon = item.querySelector('td:nth-child(1) img').src
-      const name = item.querySelector('td:nth-child(1) span:nth-child(1)').textContent
-      const symbol = item.querySelector('td:nth-child(1) span:nth-child(2)').textContent
+      const name = item.querySelector('td:nth-child(1) h2').textContent
+
+      const symbol = item.querySelector('td:nth-child(1) p').textContent
       const price = item.querySelector('td:nth-child(2) span:nth-child(1)').textContent
-      const change = item.querySelector('td:nth-child(3) span, td:nth-child(3)').textContent
-      const volume = item.querySelector('td:nth-child(5) span span').textContent
-      const marketCap = item.querySelector('td:nth-child(6) span span').textContent
+      const change = item.querySelector('td:nth-child(4) span span:nth-child(2)')?.textContent  || ''
+      const marketCap = item.querySelector('td:nth-child(5) span').textContent
+      const volume = item.querySelector('td:nth-child(6) span').textContent
 
       return {
         name,

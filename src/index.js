@@ -15,7 +15,7 @@ const start = async () => {
     await closeBrowser(browser)
 
     console.log('[ 🤖 ] sending top 10 data to telegram bot')
-    await sendMessageToTelegramBot(cryptos.slice(0, 10))
+    await sendMessageToTelegramBot(cryptos)
 
     console.log('[ 🤖 ] message sent, we are done')
   } catch (error) {
