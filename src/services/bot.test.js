@@ -23,5 +23,4 @@ describe('formatMessageToTelegramBot', () => {
   it('should return a formatted message with title only', () => {
     expect(formatMessageToTelegramBot()).toBe('\n  <b>Top 10 Cryptos</b>\n  \n')
   })
-
 })
