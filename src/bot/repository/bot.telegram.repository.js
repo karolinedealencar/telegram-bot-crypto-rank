@@ -1,4 +1,3 @@
-const log = require('../../utils/log')
 const axios = require('axios').default
 const BotInterface = require('../bot.interface')
 const { telegramBotToken, telegramBotChatID } = require('../../config')
