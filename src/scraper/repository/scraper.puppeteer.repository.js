@@ -66,21 +66,26 @@ class ScraperPuppeteer extends ScraperInterface {
   }
 
   async getList() {
-    log.info('[ 🤖 ] launching browser')
-    await this.launchBrowser()
+    try {
+      log.info('[ 🤖 ] launching browser')
+      await this.launchBrowser()
 
-    log.info('[ 🤖 ] creating page')
-    await this.createPage()
+      log.info('[ 🤖 ] creating page')
+      await this.createPage()
 
-    log.info('[ 🤖 ] opening coinbase website')
-    await this.goToSite()
+      log.info('[ 🤖 ] opening coinbase website')
+      await this.goToSite()
 
-    log.info('[ 🤖 ] getting top 10 crypto')
-    const list = await this.scrapSite()
+      log.info('[ 🤖 ] getting top 10 crypto')
+      const list = await this.scrapSite()
 
-    log.info('[ 🤖 ] closing browser')
-    await this.closeBrowser()
-    return list
+      log.info('[ 🤖 ] closing browser')
+      await this.closeBrowser()
+      return list
+    } catch (error) {
+      await this.closeBrowser()
+      throw new Error(error)
+    }
   }
 }
 
